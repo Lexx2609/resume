@@ -1,50 +1,84 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Алексей">
+    <meta name="description" content="Это сайт резюме">
+    <title>Алексей Резюме</title>
+</head>
+<body>
+    <img src="avatar.jpg" width="200" alt="Меньщиков Алексей">
+    <h1>Меньщиков Алексей</h1>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+    <p>Системный администратор <strong>Программист </strong> </p>
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    <hr>
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    <p>Я люблю программировать,заниматься спортом <em> Программист</em> </p>
 
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    
+    <h4>Список социальных сетей:</h4>
+    <a href="https://vk.com/id111354146" target="_blank">VK</a>
+    |
+    <a href="" target="_blank">Telegram</a>
+    |
+    <a href="" target="_blank">Instagram</a>
 
-jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+    <h2>Мои хобби</h2>
+    <ol>
+        <li>Путешествия</li>
+        <li>Спорт</li>
+        <li>программировать</li>
+        <li>Горные лыжи</li>
+    </ol>
+    <h2>Опыт работы</h2>
+    <table>
+       <thead>
+        <tr>
+            <th>Название</th>
+            <th>Должность</th>
+            <th>Год</th>
+        </tr>
+       </thead> 
+       <tbody>
+        <tr>
+            <td>Индивидуальный предприниматель</td>
+            <td>Системный администратор</td>
+            <td>2008-2020</td>
+        </tr>
+        <tr>
+            <td>Ученник</td>
+            <td>программирование</td>
+            <td>2022-сейчас</td>
+        </tr>
+       </tbody>
+    </table>
+    <h2>Связаться со мной</h2>
+    <form action="">
+        <div>
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name"
+        placeholder="Введите имя">    
+        </div>
+        <div>
+            <label for="email">Ваш email:</label>
+            <input type="email" id="email"
+            placeholder="Введите email">    
+        </div>
+        <div>
+            <label for="message">Ваше Сообщение:</label>
+            <br>
+            <textarea id="message" cols="20" rows="5" placeholder="Введите сообщение..."></textarea>
+               
+        </div>
+        <input type="submit" value="Отправить!">
+        <br>
+        <br>
+        <br>
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+    </form>
+
+</body>
+</html>
